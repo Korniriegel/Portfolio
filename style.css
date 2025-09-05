@@ -1,0 +1,411 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+ html,body {
+    height: 100%;
+    background-color:#000;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+  }
+
+  .logo{
+    font-size: 40px;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0c0;
+  }
+  
+  .navbar{
+    position: absolute;
+    z-index: 10;
+    padding: 40px;
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .navbar .nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  .navbar .nav ul li a{
+    text-decoration: none;
+    color: #0c0;
+    display: block;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 0 15px;
+  }
+
+  ul li a{
+    background: transparent;
+    border-radius: 5px;
+    transition: all 0.3 ease-in-out;
+    border: 1px solid #0c0;
+  }
+  
+  ul li a:hover{
+    border:0;
+    box-shadow: 0 0 10px #0c0,
+                0 0 20px #0c0,
+                0 0 40px #0c0,
+                0 0 80px #0c0,
+                0 0 100px rgb(1, 247, 1);
+
+  }
+  .centerbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .headline {
+    color: #0c0;
+    font-family: 'VT323', Courier, monospace;
+    margin: 0;
+    font-size: 60px;
+    line-height: 1.5;
+  }
+
+  .subtext {
+    color: #0c0;
+    font-family: 'VT323', Courier, monospace;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 30px;
+    max-width: 700px;
+    margin-top: 20px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    color: #0c0;
+    animation: blink 0.7s infinite;
+  }
+  .project-title {
+  display: inline-block;
+  position: relative;
+  font-size: 28px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  }
+  .project-card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* zentriert Bild und Text */
+    padding: 200px;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+  }
+  .project-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 20px 0;
+    border: 1px solid #0c0;
+    border-radius: 8px;
+    display: block;
+    box-sizing: border-box;
+  }
+  .project-title .cursor {
+    display: inline-block;
+    margin-left: 5px;
+    color: #0c0;
+    animation: blink 0.7s step-start infinite;
+  }
+
+  .github-link {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #0c0;
+    border: 1px solid #0c0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+  }
+
+  .github-link:hover {
+    box-shadow: 0 0 10px #0c0,
+                0 0 20px #0c0;
+    transform: scale(1.05);
+  }
+  .contact-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+  .contact-link {
+  color: #0c0;
+  margin-right: 60px;
+  text-decoration: underline;
+  font-size: 30px;
+  }
+  .contact-link:hover {
+  text-shadow: 0 0 5px #0c0, 0 0 10px #0c0;
+  }
+
+  .github-link {
+    display: flex;
+    width: 90px;
+    height: 90px;
+    border: 2px solid #0c0; /* grüner Rahmen */
+    padding: 5px;            /* Abstand zwischen Rahmen und Icon */
+    border-radius: 5px;      /* leichte Rundung */
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #0c0;
+    margin: 40px;
+  }
+  .github-link img {
+  width: 50px;     /* feste Größe */
+  height: 50px;    /* feste Größe */
+  display: block;  /* verhindert Zeilenversatz */
+  }
+  .github-link span {
+  margin-top: 5px;
+  color: #0c0;
+  font-size: 32px;
+  font-family: 'VT323', monospace;
+  }
+  .github-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .github-text {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: 'VT323', Courier, monospace;
+  }
+
+  .github-link:hover .github-icon {
+    filter: drop-shadow(0 0 5px #0c0)
+            drop-shadow(0 0 10px #0c0)
+            drop-shadow(0 0 20px #0c0);
+    transform: scale(1.1);
+  }
+
+  .screen {
+    animation:colorPulse 1s infinite ease-in-out;
+    background-image:radial-gradient(#444, #111);
+    box-shadow:0 0 5vmin 1vmin #000 inset;
+    box-sizing:border-box;
+    font-family:'VT323', Courier;
+    font-size:20px;
+    height:100vh;
+    overflow:hidden;
+    padding:10vmin;
+    width:100vw;
+  }
+  
+  .screen:before {
+    animation:wave 15s infinite ease-in-out;
+    content:"";
+    height:20vh;
+    left:0;
+    opacity:.3;
+    position:absolute;
+    pointer-events: none;
+    right:0;
+    z-index:1;
+  }
+  
+  .screen:after {
+    background-image:linear-gradient(transparent 10px, #373737);
+    background-size:5px 5px;
+    bottom:0;
+    content:"";
+    left:0;
+    pointer-events:none;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:2;
+  }
+  
+  .h1:last-child:after {
+    animation:blink 1s infinite;
+    content:"|";
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #0c0;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  @keyframes wave {
+    0% {
+     box-shadow:0 -10vh 40vh #0c0;
+     top:-100vh;
+    }
+    48%, 52% {
+      box-shadow:0 -10vh 40vh #090;
+    }
+    50% {
+      box-shadow:0 -10vh 24vh #060;
+    }
+    100% {
+      box-shadow:0 -10vh 40vh #0c0;
+      top:200vh;
+    }
+  }
+
+  @keyframes scroll {
+   0% { height: 0 }
+   100% { height: 100%; }
+  }
+
+  @keyframes type { 
+   from { width: 0; } 
+  } 
+
+  @keyframes type2 {
+   0%{width: 0;}
+   50%{width: 0;}
+   100%{ width: 100; } 
+  } 
+
+  @keyframes blink {
+   to{opacity: 0;}
+  }
+
+  @keyframes scan {
+   from { top: 0 }
+   to { top: 100% }
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.15795 }
+    5% { opacity: 0.31511 }
+    10% { opacity: 0.94554 }
+    15% { opacity: 0.2469 }
+    20% { opacity: 0.62031 }
+    25% { opacity: 0.0293 }
+    30% { opacity: 0.00899 }
+    35% { opacity: 0.5344 }
+    40% { opacity: 0.12778 }
+    45% { opacity: 0.52042 }
+    50% { opacity: 0.3823 }
+    55% { opacity: 0.2198 }
+    60% { opacity: 0.9383 }
+    65% { opacity: 0.86615 }
+    70% { opacity: 0.68695 }
+    75% { opacity: 0.55749 }
+    80% { opacity: 0.96984 }
+    85% { opacity: 0.0361 }
+    90% { opacity: 0.24467 }
+    95% { opacity: 0.08351 }
+    100% { opacity: 0.54813 }
+  }
+
+  @keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+  }
+
+  @keyframes blink {
+  50% { border-color: transparent }
+  }
+  
+  body::after{
+    pointer-events: none;
+  }
+
+  .overlay:before {
+   background: linear-gradient(#373737 30%, rgba(12, 12, 12, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+   background-size: 100% 3px, 6px 100%;
+   content: "";
+   display: block;
+   pointer-events: none;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+  }
+  
+  .overlay:after {
+   animation: flicker 0.60s infinite;
+   background: rgba(16, 16, 16, 0.2);
+   content: "";
+   display: block;
+   pointer-events: none;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 2;
+  }
+
+  .wrapper {
+   width: 90%;
+   height: 100%;
+   overflow: hidden;
+   animation: scroll 10s 1;
+   margin: 0px auto;
+   padding: 0;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+  }
+  .scanline {
+    animation: scroll 15s 5s infinite;
+    background: -moz-linear-gradient(top,  rgba(0,221,0,0) 0%, rgba(0,221,0,1) 40%, rgba(0,221,0,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,221,0,0) 0%,rgba(0,221,0,1) 40%,rgba(0,221,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,221,0,0) 0%,rgba(0,221,0,1) 40%,rgba(0,221,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000dd00', endColorstr='#0000dd00',GradientType=0 );
+    display: block;
+    height: 20px;
+    pointer-events: none;
+    opacity: 0.03;
+    position: absolute;
+      left: 0;
+      right: 0;
+      top: -5%;
+    z-index: 2;
+  }
+
