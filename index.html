@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sebastian Siemers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <div class="navbar">
+            <a class="logo">Sebastian Siemers</a>
+            <div class="nav">
+                <ul>
+                    <li><a class="b1" href="#home">Home</a></li>
+                    <li><a class="b2" href="#projects">Projekte</a></li>
+                    <li><a class="b3" href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Home Section -->
+        <section id="home" class="centerbox">
+            <h1 class="headline" id="headline"></h1>
+            <p class="subtext" id="subtext"></p>
+        </section>
+
+        <!-- Projekte Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title"></h2>
+            <div class="projects-grid">
+                <div class="project-card1">
+                    <h3 class="memory">Memory Spiel</h3>
+                    <a href="memory.png" class="popup-link">
+                        <img src="memory.png" alt="Memory Spiel Collage" class="project-image">
+                    </a>
+                    <p class="comment">Memory-Spiel – GUI-basiertes Spiel in Python mit CustomTkinter, Highscore-System und dynamischer Spielgröße.</p>
+                    <a href="https://github.com/Korniriegel/memory" target="_blank" class="github-link">
+                        <img src="github-mark-white.svg" alt="GitHub Icon" class="github-icon">
+                        <span class="github-text">GitHub</span>
+                    </a>
+                    </div>
+            </div>
+            <section id="contact" class="contact-section">
+                    <h2 class="section-title"></h2>
+                        <p><a href="mailto:sebastian.siemers@t-online.de" class="contact-link">sebastian-siemers@t-online.de</a></p>
+                        <a href="https://github.com/Korniriegel" target="_blank" class="github-link">
+                        <img src="github-mark-white.svg" alt="GitHub Icon" class="github-icon">
+                        <span class="github-text">GitHub</span>
+                        </a>
+            </section>
+        <div id="popup" class="popup">
+                <span class="popup-close">&times;</span>
+                <img class="popup-content" id="popup-img">
+        </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-#">
+            <h2 class="section-title">#</h2>
+            <p>#.</p>
+        </section>
+
+        <div class="screen">
+            <div class="content clearfix"></div>
+        </div>
+    </div>
+
+    <!-- Typewriter Script -->
+    <script>
+        const headlineText = "I would be an Developer";
+        const subText = `Ich lerne kontinuierlich neue Technologien, experimentiere mit Software und erkunde kreative digitale Lösungen.
+        Mein Fokus liegt darauf, Probleme effizient zu lösen und meinen Weg als Entwickler Schritt für Schritt zu gestalten.
+        Auf dieser Webseite möchte ich ein wenig meinen Fortschritt dokumentieren.`;
+
+        function typeWriter(element, text, speed = 80, callback) {
+            let i = 0;
+            const cursor = document.createElement("span");
+            cursor.classList.add("cursor");
+            cursor.textContent = "|";
+            element.appendChild(cursor);
+            function typing() {
+                if (i < text.length) {
+                    if (text[i] === "\n") element.insertBefore(document.createElement("br"), cursor);
+                    else element.insertBefore(document.createTextNode(text[i]), cursor);
+                    i++;
+                    setTimeout(typing, speed);
+                } else {
+                    if (callback) element.removeChild(cursor);
+                    if (callback) callback();
+                }
+            }
+            typing();
+        }
+
+        const headlineEl = document.getElementById("headline");
+        const subEl = document.getElementById("subtext");
+
+        typeWriter(headlineEl, headlineText, 120, () => {
+            typeWriter(subEl, subText, 35);
+        });
+    </script>
+    <script>
+        const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popup-img");
+        const popupClose = document.querySelector(".popup-close");
+
+        document.querySelectorAll(".popup-link").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                popup.style.display = "block";
+                popupImg.src = link.querySelector("img").src;
+         });
+    });
+
+    popupClose.onclick = () => {
+        popup.style.display = "none";
+    };
+
+    popup.onclick = e => {
+        if (e.target === popup) popup.style.display = "none";
+    };
+    </script>
+
+    <!-- Menu Sound Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuItems = document.querySelectorAll(".b1, .b2, .b3");
+            const sound = new Audio("menu.wav");
+            sound.preload = "auto";
+
+            menuItems.forEach(item => {
+                item.addEventListener("pointerdown", () => {
+                    sound.currentTime = 0;
+                    sound.play().catch(err => console.log("Audio konnte nicht abgespielt werden:", err));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

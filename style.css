@@ -1,0 +1,421 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+html, body {
+  height: 100%;
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body::after {
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 40px;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0c0;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 10;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.navbar .nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.navbar .nav ul li a {
+  text-decoration: none;
+  color: #0c0;
+  display: block;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin: 0 15px;
+}
+
+ul li a {
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #0c0;
+  transition: all 0.3s ease-in-out;
+}
+
+ul li a:hover {
+  border: 0;
+  box-shadow: 0 0 10px #0c0,
+              0 0 20px #0c0,
+              0 0 40px #0c0,
+              0 0 80px #0c0,
+              0 0 100px rgb(1, 247, 1);
+}
+
+.centerbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.headline {
+  position: relative;
+  color: #0c0;
+  font-family: 'VT323', Courier, monospace;
+  margin: 0;
+  font-size: 60px;
+  line-height: 1.5;
+}
+
+.subtext {
+  position: relative;
+  color: #0c0;
+  font-family: 'VT323', Courier, monospace;
+  margin: 20px 0 0 0;
+  line-height: 1.5;
+  font-size: 30px;
+  max-width: 700px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #0c0;
+  animation: blink-opacity 0.7s infinite;
+}
+
+.projects-section {
+  overflow-y: auto;
+}
+
+.project-title {
+  display: inline-block;
+  position: relative;
+  font-size: 28px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.project-title .cursor {
+  display: inline-block;
+  margin-left: 5px;
+  color: #0c0;
+  animation: blink-border 0.7s step-start infinite;
+}
+
+.project-card1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.memory {
+  margin-top: 80px;
+  font-size: 30px;
+  color: #0c0;
+  font-family: 'VT323', Courier, monospace;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 20px;
+  border: 1px solid #0c0;
+  border-radius: 8px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.comment{
+  position: relative;
+  color: #0c0;
+  font-family: 'VT323', Courier,;
+  margin: 20px 0 0 0;
+  font-size: 20px;
+  max-width: 550px;
+}
+
+.github-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  margin: 20px;
+  padding: 5px;
+  border: 2px solid #0c0;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #0c0;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.github-link img {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.github-link span {
+  margin-top: 5px;
+  color: #0c0;
+  font-size: 32px;
+  font-family: 'VT323', monospace;
+}
+
+.github-icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease-in-out;
+}
+
+.github-text {
+  display: block;
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: 'VT323', Courier, monospace;
+}
+
+.github-link:hover {
+  box-shadow: 0 0 10px #0c0,
+              0 0 20px #0c0;
+  transform: scale(1.05);
+}
+
+.github-link:hover .github-icon {
+  filter: drop-shadow(0 0 5px #0c0)
+          drop-shadow(0 0 10px #0c0)
+          drop-shadow(0 0 20px #0c0);
+  transform: scale(1.1);
+}
+
+.contact-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-link {
+  color: #0c0;
+  margin-right: 70px;
+  text-decoration: underline;
+  font-size: 30px;
+}
+
+.contact-link:hover {
+  text-shadow: 0 0 5px #0c0, 0 0 10px #0c0;
+}
+
+.screen {
+  animation: colorPulse 1s infinite ease-in-out;
+  background-image: radial-gradient(#444, #111);
+  box-shadow: 0 0 5vmin 1vmin #000 inset;
+  box-sizing: border-box;
+  font-family: 'VT323', Courier;
+  font-size: 20px;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10vmin;
+  width: 100vw;
+}
+
+.screen:before {
+  animation: wave 15s infinite ease-in-out;
+  content: "";
+  height: 20vh;
+  left: 0;
+  opacity: .3;
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  z-index: 1;
+}
+
+.screen:after {
+  background-image: linear-gradient(transparent 10px, #373737);
+  background-size: 5px 5px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.h1:last-child:after {
+  animation: blink-border 1s infinite;
+  content: "|";
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.popup-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5%;
+}
+
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #0c0;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlay:before {
+  background: linear-gradient(#373737 30%, rgba(12,12,12,0.2) 50%), linear-gradient(90deg, rgba(255,0,0,0.03), rgba(0,255,0,0.02), rgba(0,0,255,0.03));
+  background-size: 100% 3px, 6px 100%;
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.overlay:after {
+  animation: flicker 0.6s infinite;
+  background: rgba(16,16,16,0.2);
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.wrapper {
+  width: 90%;
+  height: 100vh;
+  animation: scroll 10s 1;
+  margin: 0 auto;
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scanline {
+  animation: scroll 15s 5s infinite;
+  background: linear-gradient(to bottom, rgba(0,221,0,0) 0%, rgba(0,221,0,1) 40%, rgba(0,221,0,0) 100%);
+  display: block;
+  height: 20px;
+  pointer-events: none;
+  opacity: 0.03;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -5%;
+  z-index: 2;
+}
+
+/* --- Keyframes --- */
+@keyframes wave {
+  0% { box-shadow:0 -10vh 40vh #0c0; top:-100vh; }
+  48%,52% { box-shadow:0 -10vh 40vh #090; }
+  50% { box-shadow:0 -10vh 24vh #060; }
+  100% { box-shadow:0 -10vh 40vh #0c0; top:200vh; }
+}
+
+@keyframes scroll { 0% { height:0; } 100% { height:100%; } }
+@keyframes type { from { width:0; } }
+@keyframes type2 { 0%{width:0;} 50%{width:0;} 100%{width:100;} }
+@keyframes blink-opacity { to { opacity:0; } }
+@keyframes blink-border { 50% { border-color:transparent; } }
+@keyframes scan { from { top:0; } to { top:100%; } }
+@keyframes flicker {
+  0%{opacity:0.15795;}5%{opacity:0.31511;}10%{opacity:0.94554;}15%{opacity:0.2469;}
+  20%{opacity:0.62031;}25%{opacity:0.0293;}30%{opacity:0.00899;}35%{opacity:0.5344;}
+  40%{opacity:0.12778;}45%{opacity:0.52042;}50%{opacity:0.3823;}55%{opacity:0.2198;}
+  60%{opacity:0.9383;}65%{opacity:0.86615;}70%{opacity:0.68695;}75%{opacity:0.55749;}
+  80%{opacity:0.96984;}85%{opacity:0.0361;}90%{opacity:0.24467;}95%{opacity:0.08351;}
+  100%{opacity:0.54813;}
+}
+@keyframes typing { from { width:0; } to { width:100%; } }
+
+/* --- Media Queries --- */
+@media (max-width:1280px){
+  .headline{font-size:55px; line-height:1; padding-top:10px; justify-content:center;}
+  .subtext{font-size:30px; max-width:100%;}
+  .navbar{flex-direction:column; align-items:center; padding:10px;}
+  .navbar .nav ul li a{font-size:28px; margin:10px;}
+  .project-card1{padding:10px; margin-top:8em;}
+  .project-image{max-width:300px;}
+  .github-link{width:70px; height:60px; padding:20px;}
+  .github-link span{font-size:30px;}
+  .contact-link{font-size:40px; display:block; text-align:left; margin:10px 0 10px 20px;}
+}
+
+@media (max-width:768px){
+  .logo{font-size:25px;}
+  .headline{font-size:25px; line-height:1; padding-top:10px; justify-content:center;}
+  .subtext{font-size:18px; max-width:100%;}
+  .navbar{flex-direction:column; align-items:flex-start; padding:10px;}
+  .navbar .nav ul li a{font-size:18px; margin:10px;}
+  .project-card1{padding:20px; margin-top:40px;}
+  .project-image{max-width:300px;}
+  .github-link{width:70px; height:70px; margin:20px;}
+  .github-link span{font-size:20px;}
+  .contact-link{font-size:20px; display:block; text-align:left; margin:10px 0 10px 20px;}
+}
+
+@media (max-width:480px){
+  .logo{font-size:25px;}
+  .headline{font-size:25px; line-height:1; padding-top:10px;}
+  .subtext{font-size:16px; max-width:100%;}
+  .navbar .nav ul li a{font-size:18px; margin:10px;}
+  .memory{margin-top: 80px;}
+  .project-card1{padding:20px; margin-top:80px;}
+  .project-image{max-width:300px;}
+  .github-link{width:70px; height:70px; margin:20px;}
+  .github-link span{font-size:20px;}
+  .contact-link{font-size:20px; display:block; text-align:left; margin:10px 0 10px 20px;}
+}
